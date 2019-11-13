@@ -1,18 +1,24 @@
 <template>
   <div id="app">
-    <button class="button is-primary">This button</button>
+    <index/>
+    <subject/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import index from './components/index.vue'
+import subject from './components/subject.vue'
+import events from './components/events.vue'
 export default {
   name: 'app',
-
+  components:{
+    index,
+    subject,
+    events
+  }
 }
 </script>
 
-<style lang="scss">
-  @import "~bulma/css/bulma.css";
+<style>
+
 </style>
