@@ -1,5 +1,13 @@
 <template>
   <div id="app">
+    <br>
+    NASLOVNICA <br><br>
+    <index/><br><br>
+    OVO JE KAD SE IDE NA ADD SUBJECT
+    <br><br>
+    <subject/><br><br>
+    OVO JE MYTRIP
+    <br><br>
     <mytrip/>
   </div>
 </template>
@@ -24,7 +32,3 @@ export default {
 
 </style>
 
-NASLOVNICA <br><br>
-    <index/><br><br>
-    OVO JE KAD SE IDE NA ADD SUBJECT
-    <subject/>
