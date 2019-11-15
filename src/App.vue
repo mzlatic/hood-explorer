@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <index/>
+    NASLOVNICA <br><br>
+    <index/><br><br>
+    OVO JE KAD SE IDE NA ADD SUBJECT
     <subject/>
   </div>
 </template>
