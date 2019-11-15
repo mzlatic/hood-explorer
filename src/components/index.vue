@@ -69,44 +69,44 @@
     <div class="columns has-text-centered">
     <div class="column ">
       <img  src="../slike/infogamer.png" >
-      <h2>REBOOT INFOGAMER 2019 POWERED BY A1</h2>
+      <h2 class="has-text-weight-bold">REBOOT INFOGAMER 2019 POWERED BY A1</h2>
       <h3>12.-17.11.2019.  ZAGREB, UTO – NED 10.00 – 20.00</h3>
     </div>
     <div class="column">
       <img src="../slike/infogamer.png" alt="">
-      <h2>REBOOT INFOGAMER 2019 POWERED BY A1</h2>
+      <h2 class="has-text-weight-bold">REBOOT INFOGAMER 2019 POWERED BY A1</h2>
       <h3>12.-17.11.2019.  ZAGREB, UTO – NED 10.00 – 20.00</h3>
     </div>
     <div class="column">
       <img src="../slike/infogamer.png" alt="">
-      <h2>REBOOT INFOGAMER 2019 POWERED BY A1</h2>
+      <h2 class="has-text-weight-bold">REBOOT INFOGAMER 2019 POWERED BY A1</h2>
       <h3>12.-17.11.2019.  ZAGREB, UTO – NED 10.00 – 20.00</h3>
     </div>
     <div class="column">
       <img src="../slike/infogamer.png" alt="">
-      <h2>REBOOT INFOGAMER 2019 POWERED BY A1</h2>
+      <h2 class="has-text-weight-bold">REBOOT INFOGAMER 2019 POWERED BY A1</h2>
       <h3>12.-17.11.2019.  ZAGREB, UTO – NED 10.00 – 20.00</h3>
     </div>
     </div>
     <div class="columns has-text-centered">
     <div class="column">
       <img src="../slike/infogamer.png" alt="">
-      <h2>REBOOT INFOGAMER 2019 POWERED BY A1</h2>
+      <h2 class="has-text-weight-bold">REBOOT INFOGAMER 2019 POWERED BY A1</h2>
       <h3>12.-17.11.2019.  ZAGREB, UTO – NED 10.00 – 20.00</h3>
     </div>
     <div class="column">
       <img src="../slike/infogamer.png" alt="">
-      <h2>REBOOT INFOGAMER 2019 POWERED BY A1</h2>
+      <h2 class="has-text-weight-bold">REBOOT INFOGAMER 2019 POWERED BY A1</h2>
       <h3>12.-17.11.2019.  ZAGREB, UTO – NED 10.00 – 20.00</h3>
     </div>
     <div class="column">
       <img src="../slike/infogamer.png" alt="">
-      <h2>REBOOT INFOGAMER 2019 POWERED BY A1</h2>
+      <h2 class="has-text-weight-bold">REBOOT INFOGAMER 2019 POWERED BY A1</h2>
       <h3>12.-17.11.2019.  ZAGREB, UTO – NED 10.00 – 20.00</h3>
     </div>
     <div class="column">
       <img src="../slike/infogamer.png" alt="">
-      <h2>REBOOT INFOGAMER 2019 POWERED BY A1</h2>
+      <h2 class="has-text-weight-bold">REBOOT INFOGAMER 2019 POWERED BY A1</h2>
       <h3>12.-17.11.2019.  ZAGREB, UTO – NED 10.00 – 20.00</h3>
     </div>
     </div>
