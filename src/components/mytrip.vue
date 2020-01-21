@@ -1,39 +1,34 @@
 <template>
 <body>
     <section>
-  <!-- Hero head: will stick at the top -->
+
     <nav class="navbar is-primary">
       <div class="container">
         <div class="navbar-brand">
             <a class="navbar-item" href="#">
             <i class="fas fa-paper-plane"></i>
-            <h1 class="navbar-item title is-5 has-text-white">Hood Explorer </h1>
+            <router-link to="/"><h1 class="navbar-item title is-5 has-text-white">Hood Explorer</h1></router-link>
         </a>
-          <span class="navbar-burger burger" data-target="navbarMenuHeroA">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
         </div>
-        <div id="navbarMenuHeroA" class="navbar-menu">
           <div class="navbar-end">
-            <a class="navbar-item is-active">
+            <router-link to="/" class="navbar-item has-text-white " id="home">
               Home
-            </a>
-            <a class="navbar-item">
-              My trip
-            </a>
+            </router-link>
+            <router-link to="/mytrip" id="trip" class="navbar-item is-active">
+              My Trip
+            </router-link>
             <div class="navbar-item control">
-        <input class="input" type="text" placeholder="Search">
-    </div>
+              <input class="input" type="text" placeholder="Search">
+            </div>
             <span class="navbar-item">
-              <a href="./subject.vue" class="button is-primary is-inverted">
-                Add Subject
+              <router-link to="/subject">
+              <a class="button is-primary is-inverted">
+                Add subject
               </a>
+              </router-link>
             </span>
           </div>
         </div>
-      </div>
     </nav>
     <div class="section">
         <div class="container">
@@ -51,7 +46,7 @@
       
          <img class="column" src="../slike/infogamer.png" >
 
-      <div class="column is-10">
+      <div class="column is-11">
           <br><br><br>
       <h2 class="title is-4 has-text-weight-bold">REBOOT INFOGAMER 2019 POWERED BY A1</h2>
       <h2 class="subtitle is-4">12.-17.11.2019.  ZAGREB, UTO – NED 10.00 – 20.00</h2>
@@ -59,7 +54,7 @@
     </div>
     <div class="columns">
          <img class="column" src="../slike/infogamer.png" >
-      <div class="column is-10">
+      <div class="column is-11">
           <br><br><br>
       <h2 class="title is-4 has-text-weight-bold">REBOOT INFOGAMER 2019 POWERED BY A1</h2>
       <h2 class="subtitle is-4">12.-17.11.2019.  ZAGREB, UTO – NED 10.00 – 20.00</h2>
@@ -67,7 +62,7 @@
     </div>
     <div class="columns">
          <img class="column" src="../slike/infogamer.png" >
-      <div class="column is-10">
+      <div class="column is-11">
           <br><br><br>
       <h2 class="title is-4 has-text-weight-bold">REBOOT INFOGAMER 2019 POWERED BY A1</h2>
       <h2 class="subtitle is-4">12.-17.11.2019.  ZAGREB, UTO – NED 10.00 – 20.00</h2>
@@ -94,3 +89,23 @@ export default {
     name: 'mytrip'
 }
 </script>
+
+<style lang="scss" scoped>
+
+@media only screen and (max-width: 1076px) {
+  .navbar-end{
+    margin:0 auto;
+    width:50%;
+  }
+  .navbar-item{
+    margin: 0 auto;
+    text-align: center;
+  }
+  #trip{
+    display:none;
+  }
+  input{
+    text-align: center;
+  }
+}
+</style>

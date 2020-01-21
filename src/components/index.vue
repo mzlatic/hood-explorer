@@ -8,31 +8,27 @@
         <div class="navbar-brand">
             <a class="navbar-item" href="#">
             <i class="fas fa-paper-plane"></i>
-            <h1 class="navbar-item title is-5 has-text-white">Hood Explorer </h1>
+            <router-link to="/"><h1 class="navbar-item title is-5 has-text-white">Hood Explorer</h1></router-link>
         </a>
-          <span class="navbar-burger burger" data-target="navbarMenuHeroA">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
         </div>
-        <div id="navbarMenuHeroA" class="navbar-menu">
           <div class="navbar-end">
-            <a class="navbar-item is-active">
+            <router-link to="/" class="navbar-item is-active has-text-white" id="home" >
               Home
-            </a>
-            <a class="navbar-item">
-              My trip
-            </a>
-            <div class="navbar-item control">
-        <input class="input" type="text" placeholder="Search">
+            </router-link>
+            <router-link to="/mytrip" class="navbar-item has-text-white" id="trip">
+              My Trip
+            </router-link>
+            <div class="navbar-item control" id="search">
+        <input class="input"   v-model="ime" type="text" placeholder="Search">
     </div>
-            <span class="navbar-item">
-              <a href="./subject.vue" class="button is-primary is-inverted">
-                Add Subject
+            <span class="navbar-item" id="add">
+              <router-link to="/subject">
+              <a class="button is-primary is-inverted">
+                Add subject
               </a>
+              </router-link>
             </span>
-          </div>
+         
         </div>
       </div>
     </nav>
@@ -54,7 +50,7 @@
   <!-- Hero footer: will stick at the bottom -->
   <div class="hero-foot">
     <nav class="tabs">
-      <div class="container tabs is-boxed">
+      <div class="container tabs is-boxed ">
         <ul>
           <li class="is-active"><a>Events</a></li>
           <li><a>Places</a></li>
@@ -65,6 +61,7 @@
   </div>
   </section>
   <div class="section">
+  
   <div class="container is-widescreen">
     <div class="columns has-text-centered">
     <div class="column ">
@@ -126,17 +123,34 @@
 </template>
 
 <script>
-import subject from './subject.vue'
 export default {
-    name: 'index',
-    components:{
-        subject
-    }
+    name: 'index'
 }
-
 </script>
 
 <style lang="scss" scoped>
+
+
+@media only screen and (max-width: 1080px) {
+  .navbar-end{
+    margin:0 auto;
+    width:50%;
+  }
+  .navbar-item{
+    margin: 0 auto;
+    text-align: center;
+  }
+  #home{
+    display: none;
+  }
+  input{
+    text-align: center;
+  }
+  li{
+    margin:0 auto;
+    width:33%;
+  }
+}
 </style>
   
 
