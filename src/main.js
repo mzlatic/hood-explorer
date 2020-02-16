@@ -1,28 +1,55 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import App from './App.vue'
-import Buefy from 'buefy'
-import 'buefy/dist/buefy.css'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faCheck, faCheckCircle, faInfoCircle, faExclamationTriangle, faExclamationCircle,
-  faArrowUp, faAngleRight, faAngleLeft, faAngleDown,
-  faEye, faEyeSlash, faCaretDown, faCaretUp, faUpload } from "@fortawesome/free-solid-svg-icons"
-import index from './components/index.vue'
-import subject from './components/subject.vue'
-import events from './components/events.vue'
-import mytrip from './components/mytrip.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
+import App from "./App.vue";
+import Buefy from "buefy";
+import "buefy/dist/buefy.css";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faUserSecret } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import {
+  faCheck,
+  faCheckCircle,
+  faInfoCircle,
+  faExclamationTriangle,
+  faExclamationCircle,
+  faArrowUp,
+  faAngleRight,
+  faAngleLeft,
+  faAngleDown,
+  faEye,
+  faEyeSlash,
+  faCaretDown,
+  faCaretUp,
+  faUpload
+} from "@fortawesome/free-solid-svg-icons";
+import index from "./components/index.vue";
+import subject from "./components/subject.vue";
+import events from "./components/events.vue";
+import mytrip from "./components/mytrip.vue";
 
-library.add(faUserSecret, faCheck, faCheckCircle, faInfoCircle, faExclamationTriangle, faExclamationCircle,
-  faArrowUp, faAngleRight, faAngleLeft, faAngleDown,
-  faEye, faEyeSlash, faCaretDown, faCaretUp, faUpload);
+library.add(
+  faUserSecret,
+  faCheck,
+  faCheckCircle,
+  faInfoCircle,
+  faExclamationTriangle,
+  faExclamationCircle,
+  faArrowUp,
+  faAngleRight,
+  faAngleLeft,
+  faAngleDown,
+  faEye,
+  faEyeSlash,
+  faCaretDown,
+  faCaretUp,
+  faUpload
+);
 
-Vue.component('font-awesome-icon', FontAwesomeIcon)
+Vue.component("font-awesome-icon", FontAwesomeIcon);
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
@@ -49,17 +76,14 @@ const router = new VueRouter({
 
 Vue.config.productionTip = false;
 
-
-
-
 Vue.use(Buefy, {
-  defaultIconComponent: 'vue-fontawesome',
-  defaultIconPack: 'fas',
+  defaultIconComponent: "vue-fontawesome",
+  defaultIconPack: "fas"
 });
 
-require("./assets/main.scss")
+require("./assets/main.scss");
 
 new Vue({
   router,
-  render: h => h(App)
-}).$mount('#app');
+  render: (h) => h(App)
+}).$mount("#app");
