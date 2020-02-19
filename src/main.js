@@ -1,4 +1,5 @@
 import Vue from "vue";
+import Vuex from "vuex";
 import VueRouter from "vue-router";
 import App from "./App.vue";
 import Buefy from "buefy";
@@ -26,6 +27,7 @@ import index from "./components/index.vue";
 import subject from "./components/subject.vue";
 import events from "./components/events.vue";
 import mytrip from "./components/mytrip.vue";
+import { store } from "./store/store";
 
 library.add(
   faUserSecret,
@@ -50,6 +52,8 @@ Vue.component("font-awesome-icon", FontAwesomeIcon);
 Vue.config.productionTip = false;
 
 Vue.use(VueRouter);
+
+Vue.use(Vuex);
 
 const routes = [
   {
@@ -84,6 +88,8 @@ Vue.use(Buefy, {
 require("./assets/main.scss");
 
 new Vue({
+  el: "#app",
+  store: store,
   router,
   render: (h) => h(App)
-}).$mount("#app");
+});

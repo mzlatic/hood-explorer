@@ -105,7 +105,7 @@
               <span class="file-cta">
                 <span class="file-label">Choose a file…</span>
               </span>
-              <span class="file-name">{{imageData}}</span>
+              <span class="file-name">{{ image }}</span>
             </label>
           </div>
         </div>
@@ -129,30 +129,41 @@
 
         <div class="field is-grouped">
           <div class="control">
-            <button class="button is-link" v-if="cb" v-on:click="addNewEvent()">Submit</button>
+            <button class="button is-link" v-if="cb" v-on:click="addNewEvent">Submit</button>
           </div>
           <div class="control">
             <button class="button is-link is-light">Cancel</button>
           </div>
         </div>
       </form>
+      <!--
+        <div class="section">
+          <div class="container is-widescreen">
+            <div class="columns has-text-centered">
+              <div class="column" v-for="(event, index) in eventi" :key="index">
+                {{ event.image }}{{ event.title }}
+              </div>
+            </div>
+          </div>
+        </div>
+      -->
       <br />
       <label class="label">Preview</label>
       <br />
-      <p>By {{userName}}</p>
+      <p>By {{ userName }}</p>
       <br />
-      <p>Email: {{email}}</p>
+      <p>Email: {{ email }}</p>
       <br />
-      <p>Title: {{title}}</p>
+      <p>Title: {{ title }}</p>
       <br />
-      <p>Selected Region: {{selectedRegion}}</p>
+      <p>Selected Region: {{ selectedRegion }}</p>
       <br />
-      <p>Selected Subject: {{selectedSubject}}</p>
+      <p>Selected Subject: {{ selectedSubject }}</p>
       <br />Picture:
       <br />
-      <img v-if="imageData" :src="imageData" width="200px" />
+      <img v-if="image" :src="image" width="200px" />
       <br />
-      <p>Details: {{details}}</p>
+      <p>Details: {{ details }}</p>
       <br />
     </div>
   </section>
@@ -162,9 +173,12 @@
     <div class="content has-text-centered has-text-black">
       <p>
         <strong>Bulma</strong> by
-        <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-        is licensed
+        <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is
+        licensed
+        <a
+          href="http://opensource.org/licenses/mit-license.php"
+        >MIT</a>. The
+        website content is licensed
         <a
           href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
         >CC BY NC SA 4.0</a>.
@@ -177,33 +191,31 @@
 <script>
 export default {
   name: "subject",
-  props: {
-    userName: String,
-    title: String,
-    selectedRegion: String,
-    selectedSubject: String,
-    email: String,
-    details: String
-  },
   data() {
     return {
-      eventi: [{}],
-      nextEventId: 1,
+      /*events: [{}],*/
       cb: null,
-      imageData: "",
-      url: null
+      image: "",
+      url: null,
+      userName: "",
+      title: "",
+      selectedRegion: "",
+      selectedSubject: "",
+      email: "",
+      details: ""
     };
   },
   methods: {
-    addNewEvent: function() {
-      this.eventi.push({
+    /*addNewEvent: function() {
+      this.events.push({
         id: this.nextEventId++,
         user: this.userName,
         image: this.imageData,
         title: this.title,
         details: this.details,
         selectedRegion: this.selectedRegion,
-        selectedSubject: this.selectedSubject
+        selectedSubject: this.selectedSubject,
+        email: this.email
       });
       this.userName = "";
       this.imageData = "";
@@ -212,7 +224,26 @@ export default {
       this.selectedRegion = "";
       this.selectedSubject = "";
       this.email = "";
-      console.log(this.eventi);
+      console.log(this.events);
+    },*/
+    addNewEvent: function() {
+      this.$store.commit("addNewEvent", {
+        user: this.userName,
+        image: this.image,
+        title: this.title,
+        details: this.details,
+        selectedRegion: this.selectedRegion,
+        selectedSubject: this.selectedSubject,
+        email: this.email
+      }),
+        (this.userName = "");
+      this.imageData = "";
+      this.title = "";
+      this.details = "";
+      this.selectedRegion = "";
+      this.selectedSubject = "";
+      this.email = "";
+      console.log(this.events);
     },
     chooseImage() {
       this.$refs.fileInput.click();
@@ -223,11 +254,19 @@ export default {
       if (files && files[0]) {
         const reader = new FileReader();
         reader.onload = e => {
-          this.imageData = e.target.result;
+          this.image = e.target.result;
         };
         reader.readAsDataURL(files[0]);
         this.$emit("input", files[0]);
       }
+    }
+  },
+  computed: {
+    events() {
+      return this.$store.state.events;
+    },
+    newEvent() {
+      return this.$store.getters.newEvent;
     }
   }
 };

@@ -42,14 +42,13 @@
       <nav class="tabs">
         <div class="container tabs is-boxed">
           <ul>
-            <li v-bind:class="[isActive1 ? 'is-active' : '']" @click="toggleClass1()">
-              <a>Events</a>
-            </li>
-            <li v-bind:class="[isActive2 ? 'is-active' : '']" @click="toggleClass2()">
-              <a>Places</a>
-            </li>
-            <li v-bind:class="[isActive3 ? 'is-active' : '']" @click="toggleClass3()">
-              <a>Accommondations</a>
+            <li
+              v-for="(tab, index) in tabs"
+              :key="index"
+              v-bind:class="[isActive === index ? 'is-active' : '']"
+              @click="toggleClass(index)"
+            >
+              <a>{{ tab }}</a>
             </li>
           </ul>
         </div>
@@ -59,29 +58,13 @@
   <div class="section">
     <div class="container is-widescreen">
       <div class="columns has-text-centered">
-        <div class="column">
-          <router-link to="/events">
-            <img src="../slike/infogamer.png" />
-          </router-link>
-          <h2 class="has-text-weight-bold">REBOOT INFOGAMER 2019 POWERED BY A1</h2>
-          <h3>12.-17.11.2019. ZAGREB, UTO – NED 10.00 – 20.00</h3>
+        <div class="column" v-for="(event,index) in events" :key="index">
+          <img :src="event.image" />
+          <h2 class="has-text-weight-bold">{{event.title}}</h2>
+          <h3>{{event.details}}</h3>
         </div>
-        <div class="column">
-          <img src="../slike/infogamer.png" alt />
-          <h2 class="has-text-weight-bold">REBOOT INFOGAMER 2019 POWERED BY A1</h2>
-          <h3>12.-17.11.2019. ZAGREB, UTO – NED 10.00 – 20.00</h3>
-        </div>
-        <div class="column">
-          <img src="../slike/infogamer.png" alt />
-          <h2 class="has-text-weight-bold">REBOOT INFOGAMER 2019 POWERED BY A1</h2>
-          <h3>12.-17.11.2019. ZAGREB, UTO – NED 10.00 – 20.00</h3>
-        </div>
-        <div class="column">
-          <img src="../slike/infogamer.png" alt />
-          <h2 class="has-text-weight-bold">REBOOT INFOGAMER 2019 POWERED BY A1</h2>
-          <h3>12.-17.11.2019. ZAGREB, UTO – NED 10.00 – 20.00</h3>
-        </div>
-      </div>
+
+        <!--
       <div class="columns has-text-centered">
         <div class="column">
           <img src="../slike/infogamer.png" alt />
@@ -102,7 +85,7 @@
           <img src="../slike/infogamer.png" alt />
           <h2 class="has-text-weight-bold">REBOOT INFOGAMER 2019 POWERED BY A1</h2>
           <h3>12.-17.11.2019. ZAGREB, UTO – NED 10.00 – 20.00</h3>
-        </div>
+        </div>-->
       </div>
     </div>
   </div>
@@ -111,9 +94,12 @@
     <div class="content has-text-centered has-text-black">
       <p>
         <strong>Bulma</strong> by
-        <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-        is licensed
+        <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is
+        licensed
+        <a
+          href="http://opensource.org/licenses/mit-license.php"
+        >MIT</a>. The
+        website content is licensed
         <a
           href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
         >CC BY NC SA 4.0</a>.
@@ -128,26 +114,21 @@ export default {
   name: "index",
   data() {
     return {
-      isActive1: true,
-      isActive2: false,
-      isActive3: false
+      isActive: 0,
+      tabs: ["Events", "Places", "Accomondations"]
     };
   },
   methods: {
-    toggleClass1: function() {
-      (this.isActive1 = true),
-        (this.isActive2 = false),
-        (this.isActive3 = false);
+    toggleClass(id) {
+      this.isActive = id;
+    }
+  },
+  computed: {
+    events() {
+      return this.$store.state.events;
     },
-    toggleClass2: function() {
-      (this.isActive2 = true),
-        (this.isActive1 = false),
-        (this.isActive3 = false);
-    },
-    toggleClass3: function() {
-      (this.isActive3 = true),
-        (this.isActive1 = false),
-        (this.isActive2 = false);
+    newEvent() {
+      return this.$store.getters.newEvent;
     }
   }
 };
@@ -175,5 +156,3 @@ export default {
   }
 }
 </style>
-  
-
