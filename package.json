@@ -18,7 +18,7 @@
     "core-js": "^3.3.2",
     "ecstatic": "^4.1.2",
     "es6-promise": "^4.2.8",
-    "serialize-javascript": ">=2.1.1",
+    "serialize-javascript": ">=3.1.0",
     "vue": "^2.6.10",
     "vue-burger-menu": "^2.0.3",
     "vue-router": "^3.1.5",
