@@ -16,7 +16,7 @@
     "buefy": "^0.8.6",
     "bulma": "^0.8.0",
     "core-js": "^3.3.2",
-    "ecstatic": "^4.1.2",
+    "ecstatic": "^4.1.4",
     "es6-promise": "^4.2.8",
     "serialize-javascript": ">=2.1.1",
     "vue": "^2.6.10",
